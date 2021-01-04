@@ -33,5 +33,6 @@ jobs:
       - name: Install surge
         run: npm install -g surge
       
+      
       - name: Depoyement
         run: surge ./build shoe-store-react-sj.surge.sh --token ${{secrets.SURGE_TOKEN}}
