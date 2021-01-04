@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-
+    maxWidth: 750
 
   },
   icon: {
@@ -36,19 +36,17 @@ export default function Product() {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={300} cellWidth={300} className={classes.gridList}>
+      <GridList cellHeight={300}  className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">Our Products</ListSubheader>
+          <ListSubheader component="h1">Our Products</ListSubheader>
         </GridListTile>
         {Object.keys(shoes).map((key) => (
-
-
-
           <GridListTile key={key}>
             <img src={shoes[key].img} alt={shoes[key].name} height={300} width={300} />
             <Link to={"/product/" + key}>
               <GridListTileBar
                 title={shoes[key].name}
+                subtitle={<span>Price Rs. {shoes[key].price}</span>}
                 actionIcon={
                   <IconButton aria-label={`info about ${shoes[key].name}`} className={classes.icon}>
                     <InfoIcon />

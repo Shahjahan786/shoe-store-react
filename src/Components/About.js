@@ -1,9 +1,9 @@
 
 function About() {
   return (
-    <div >
-      About
-    </div>
+    <h1 >
+      A simple react project for shoe store using react router v6
+    </h1>
   );
 }
 
